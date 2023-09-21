@@ -9,19 +9,19 @@ pipeline {
         
         stage('Packer init') {
             steps {
-                sh 'cd packer && packer init awspkr.pkr.hcl'
+                sh 'cd packer && packer init awspkr.pkr.hcl'    
             }
         }
 
         stage('Packer Vlaidate') {
             steps {
-                sh 'cd packer && packer validate awspkr.pkr.hcl -var-file="vars.pkrvars.hcl"'
+                sh 'cd packer && packer validate awspkr.pkr.hcl -var-file="$PWD/vars.pkrvars.hcl"'
             }
         }
 
         stage('Packer build') {
             steps {
-                sh 'cd packer && packer build awspkr.pkr.hcl -var-file="vars.pkrvars.hcl"'
+                sh 'cd packer && packer build awspkr.pkr.hcl -var-file="$PWD/vars.pkrvars.hcl"'
             }
         }
     }
