@@ -26,7 +26,7 @@ variable "ssh_username" {
 }
 
 variable "skip_region_validation" {
-  type = bool
+  type = string
 }
 
 variable "tags" {
