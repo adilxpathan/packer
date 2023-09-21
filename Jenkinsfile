@@ -1,4 +1,8 @@
 pipeline {
+    environment {
+        AWS_ACCESS_KEY_ID     = credentials('AWS-screte	')
+        AWS_SECRET_ACCESS_KEY = credentials('aws-access	')
+    }
     agent any 
     stages {
         stage('Code check out') {
