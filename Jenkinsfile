@@ -9,7 +9,7 @@ pipeline {
         
         stage('Packer init') {
             steps {
-                sh 'cd packer && packer init awspkr.pkr.hcl'    
+                sh 'cd packer && packer init .'    
             }
         }
 
