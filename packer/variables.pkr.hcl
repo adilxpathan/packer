@@ -20,7 +20,7 @@ variable "pkr_source_ami" {
 
   validation {
     # regex(...) fails if it cannot find a match
-    condition     = can(regex("^ami-", var.source_ami))
+    condition     = can(regex("^ami-", var.pkr_source_ami))
     error_message = "The source_ami value must be a valid AMI ID, starting with \"ami-\"."
   }
 }
@@ -36,6 +36,6 @@ variable "pkr_skip_region_validation" {
 }
 
 variable "pkr_tags" {
-  type = map 
+  type = map(string)
   default = null
 }
