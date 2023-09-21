@@ -1,11 +1,11 @@
 source "amazon-ebs" "custom-ami" {
-  ami_name      = var.ami_name
-  instance_type = var.instance_type
-  region        = var.region
-  source_ami    = var.source_ami
-  ssh_username  = var.ssh_username
-  skip_region_validation = var.skip_region_validation
-  tags = var.tags
+  ami_name      = var.pkr_ami_name
+  instance_type = var.pkr_instance_type
+  region        = var.pkr_region
+  source_ami    = var.pkr_source_ami
+  ssh_username  = var.pkr_ssh_username
+  skip_region_validation = var.pkr_skip_region_validation
+  tags = var.pkr_tags
 }
 build {
   sources = ["source.amazon-ebs.custom-ami"]

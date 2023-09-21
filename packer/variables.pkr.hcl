@@ -1,19 +1,19 @@
-variable "ami_name" {
+variable "pkr_ami_name" {
   type = string
   default = null
 }
 
-variable "instance_type" {
+variable "pkr_instance_type" {
   type = string
   default = null
 }
 
-variable "region" {
+variable "pkr_region" {
   type = string
   default = null
 }
 
-variable "source_ami" {
+variable "pkr_source_ami" {
   type        = string
   default = null
   description = "The ID of the machine image (AMI) to use for the server."
@@ -25,17 +25,17 @@ variable "source_ami" {
   }
 }
 
-variable "ssh_username" {
+variable "pkr_ssh_username" {
   type = string
   default = null
 }
 
-variable "skip_region_validation" {
+variable "pkr_skip_region_validation" {
   type = string
   default = null
 }
 
-variable "tags" {
+variable "pkr_tags" {
   type = map 
   default = null
 }
