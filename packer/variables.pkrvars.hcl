@@ -1,34 +1,10 @@
-variable "ami_name" {
-  type = string
-}
+ami_name      = "custom-ami"
+instance_type = "t2.micro"
+region        = "ap-south-1"
+source_ami    = "ami-0f5ee92e2d63afc18"
+ssh_username  = "ubuntu"
+skip_region_validation = "true"
 
-variable "instance_type" {
-  type = string
-}
-
-variable "region" {
-  type = string
-}
-
-variable "source_ami" {
-  type        = string
-  description = "The ID of the machine image (AMI) to use for the server."
-
-  validation {
-    # regex(...) fails if it cannot find a match
-    condition     = can(regex("^ami-", var.source_ami))
-    error_message = "The source_ami value must be a valid AMI ID, starting with \"ami-\"."
+tags = {
+    Name = "custom-ami"
   }
-}
-
-variable "ssh_username" {
-  type = string
-}
-
-variable "skip_region_validation" {
-  type = string
-}
-
-variable "tags" {
-  type = map 
-}

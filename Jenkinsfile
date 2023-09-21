@@ -15,13 +15,13 @@ pipeline {
 
         stage('Packer Vlaidate') {
             steps {
-                sh 'cd packer && packer validate awspkr.pkr.hcl -var-file="$PWD/vars.pkrvars.hcl"'
+                sh 'cd packer && packer validate -var-file="variables.pkrvars.hcl" awspkr.pkr.hcl'
             }
         }
 
         stage('Packer build') {
             steps {
-                sh 'cd packer && packer build awspkr.pkr.hcl -var-file="$PWD/vars.pkrvars.hcl"'
+                sh 'cd packer && packer build -var-file="variables.pkrvars.hcl" awspkr.pkr.hcl'
             }
         }
     }
