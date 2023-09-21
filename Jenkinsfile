@@ -9,19 +9,19 @@ pipeline {
         
         stage('Packer init') {
             steps {
-                sh 'packer init ./packer/awspkr.pkr.hcl'
+                sh 'cd packer && packer init awspkr.pkr.hcl'
             }
         }
 
         stage('Packer Vlaidate') {
             steps {
-                sh 'packer validate ./packer/awspkr.pkr.hcl'
+                sh 'cd packer && packer validate awspkr.pkr.hcl'
             }
         }
 
         stage('Packer build') {
             steps {
-                sh 'packer build ./packer/awspkr.pkr.hcl'
+                sh 'cd packer && packer build awspkr.pkr.hcl'
             }
         }
     }
