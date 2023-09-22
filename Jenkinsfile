@@ -13,19 +13,19 @@ pipeline {
         
         stage('Packer init') {
             steps {
-                sh 'cd packer && packer init .'    
+                sh 'packer init .'    
             }
         }
 
         stage('Packer Vlaidate') {
             steps {
-                sh 'cd packer && packer validate -var-file="variables.pkrvars.hcl" .'
+                sh 'packer validate -var-file="variables.pkrvars.hcl" .'
             }
         }
 
         stage('Packer build') {
             steps {
-                sh 'cd packer && packer build -var-file="variables.pkrvars.hcl" .'
+                sh 'packer build -var-file="variables.pkrvars.hcl" .'
             }
         }
     }
