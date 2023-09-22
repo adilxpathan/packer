@@ -1,2 +1,13 @@
 ---
 # tasks file for package
+---
+- name: Packer Demo with Ansible Provisioner
+  tasks:
+  - name: Update the apt repository
+    apt:
+      update_cache: yes
+  - name: Dependencies installation
+    apt:
+      name: "{{ item }}"
+      state: present
+    loop: "{{ packages }}"

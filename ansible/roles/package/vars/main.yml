@@ -1,2 +1,7 @@
 ---
 # vars file for package
+packages:
+  - curl
+  - wget
+  - git
+
