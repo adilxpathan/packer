@@ -1,4 +1,5 @@
 ---
+sudo: yes
 - name: Update the apt repository
   apt:
     update_cache: yes
