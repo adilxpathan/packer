@@ -1,10 +1,8 @@
 ---
 - name: Update the apt repository
-  sudo: yes
   apt:
     update_cache: yes
 - name: Dependencies installation
-  sudo: yes
   apt:
     name: "{{ item }}"
     state: present
